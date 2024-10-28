@@ -31,25 +31,27 @@ def media(alunos):
     for aluno in alunos:
         for nota in aluno['notas']:
             if 3 < nota < 6:
-                alunos_recuperacao.append(f'{aluno['nome']}')
+                alunos_recuperacao.append([aluno['nome'], nota]) #Adicionei listas ordenadas aqui
                 
                 
             elif nota >= 7:
-                alunos_aprovados.append(f'{aluno['nome']}')
+                alunos_aprovados.append([aluno['nome'], nota]) #Adicionei listas ordenadas aqui
         
         
             else:
-                alunos_reprovados.append(f'{aluno['nome']} ')
+                alunos_reprovados.append([aluno['nome'], nota]) #Adicionei listas ordenadas aqui
                         
-    print(alunos_aprovados, alunos_recuperacao, alunos_reprovados )
-    #exportar_excel(aprovados=alunos_aprovados, recuperacao=alunos_recuperacao ,reprovados=alunos_reprovados)
+    print(alunos_aprovados)
+    print(alunos_recuperacao)
+    print(alunos_reprovados)
+    exportar_excel(aprovados=alunos_aprovados, recuperacao=alunos_recuperacao ,reprovados=alunos_reprovados)
 
 def atualizar_nota():
     #Desenvolver isso aqui
     pass
 
 def exportar_excel(aprovados, recuperacao, reprovados):
-    #colocar as notas inves das situações
+    #Ja coloquei as listas e notas ordenadas, agora é fazer as tabelas no excel
     dados_aprovados = {
         'Nome': aprovados,
         'Situação': ['Aprovado'] * len(aprovados)
