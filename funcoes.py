@@ -66,6 +66,7 @@ def exportar_excel(aprovados, recuperacao, reprovados):
     }
 
     dataframe = pd.DataFrame(dados_aprovados)
+
     with pd.ExcelWriter('Alunos.xlsx', engine='openpyxl') as writer:
         dataframe.to_excel(writer, sheet_name='Alunos', index=False)
 
