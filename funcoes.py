@@ -8,6 +8,7 @@ def registrar_nota():
     notas = []
     for n in range(1, 5):
         nota = float(input('Digite a nota do aluno[-1 --> Sair]: '))
+        #Fazer verificação pra nota não ser maior que 20. Caso seja, Acuse e renicie o loop
         notas.append(nota)
     
     media = sum(notas) / len(notas)
