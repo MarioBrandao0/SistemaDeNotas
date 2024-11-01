@@ -5,7 +5,6 @@ from openpyxl.styles import PatternFill
 def registrar_nota():
     os.system('clear')
     nome = input('Digite o nome do aluno: ')
-    alunos = {}
     notas = []
     for n in range(1, 5):
         nota = float(input('Digite a nota do aluno[-1 --> Sair]: '))
@@ -13,10 +12,8 @@ def registrar_nota():
     
     media = sum(notas) / len(notas)
 
-    alunos['nome'] = nome
-    alunos['notas'] = media
-    print(alunos)
-    return {'Nome': nome, 'Nota': f'{media:.2f}'}
+
+    return {'Nome': nome, 'Nota': media}
 
 def media(alunos):
     #Colocar notas em uma lista para colocar na tabela excel
@@ -26,6 +23,7 @@ def media(alunos):
     alunos_recuperacao = []
     alunos_reprovados = []
     for aluno in alunos:
+        print(aluno)
         if 5 < aluno['Nota'] < 7:
             alunos_recuperacao.append(aluno)
         elif aluno['Nota'] >= 7:

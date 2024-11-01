@@ -18,7 +18,7 @@ def main():
                 print('Nehum aluno registrado. Registre um aluno primeiro')
             
             else:
-                aprovados,recuperacao, reprovados = fc.media(alunos=guard_alunos)
+                aprovados, recuperacao, reprovados = fc.media(alunos=guard_alunos)
                 fc.exportar_excel(aprovados=aprovados, recuperacao= recuperacao, reprovados=reprovados)
 
         elif escolha == 3:
